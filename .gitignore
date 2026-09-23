@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# ML / CV
+*.pt
+*.onnx
+*.engine
+
+# Data / output
+logs/
+data/
+*.mp4
+*.avi
+*.png
+*.jpg
+
+# Node
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env

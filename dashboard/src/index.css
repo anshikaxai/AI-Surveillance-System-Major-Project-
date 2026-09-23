@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0B1220;
+  color: #E2E8F0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111A2E;
+}
+::-webkit-scrollbar-thumb {
+  background: #253053;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A4879;
+}
+
+@layer components {
+  .card {
+    @apply bg-base-800/80 backdrop-blur-sm border border-base-600/50 rounded-2xl shadow-card;
+  }
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-accent-green hover:bg-accent-green/90 text-base-900 shadow-glow;
+  }
+  .btn-secondary {
+    @apply btn bg-base-700 hover:bg-base-600 text-white border border-base-600;
+  }
+  .btn-danger {
+    @apply btn bg-accent-red/90 hover:bg-accent-red text-white;
+  }
+  .input {
+    @apply w-full px-4 py-2 rounded-lg bg-base-900/70 border border-base-600/60 text-white placeholder-white/40 focus:outline-none focus:border-accent-green/60 focus:ring-1 focus:ring-accent-green/40 transition-all;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold rounded-full;
+  }
+  .severity-info     { @apply chip bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30; }
+  .severity-low      { @apply chip bg-accent-green/15 text-accent-green border border-accent-green/30; }
+  .severity-medium   { @apply chip bg-accent-amber/15 text-accent-amber border border-accent-amber/30; }
+  .severity-high     { @apply chip bg-orange-500/15 text-orange-400 border border-orange-500/30; }
+  .severity-critical { @apply chip bg-accent-red/15 text-accent-red border border-accent-red/30; }
+}
